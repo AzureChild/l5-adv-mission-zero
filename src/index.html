@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mission D0</title>
     <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <!-- Because of the quick one-off nature of this site I am only using arbitrary values, where it seems Tailwind is at its best making use
     of your theme -->
@@ -14,9 +15,16 @@
         <!-- MOBILE NAVIGATION BAR -->
         <div class="flex md:hidden justify-between items-center">
             <img src="../src/dndlogo.jpg" alt="Logo" width="64px" height="32px"/>
-            <button class="mx-6 px-1 border border-white text-[#FFFFFF]">MENU</button>
-            <!-- MOBILE LINKS -->
-        </div> 
+            <a onclick="handleMobNav()"><i class="fa fa-bars mx-6 px-1 border border-white text-[#FFFFFF] hover:cursor-pointer"></i></a>
+        </div>
+        <!-- MOBILE LINKS -->
+        <div id="mobNav" class="hidden">
+            <ul class="text-[#FFFFFF]">
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+            </ul>
+        </div>
         <!-- DESKTOP NAVIGATION -->
         <div class="hidden md:flex md:justify-between items-center">
             <img src="../src/dndlogo.jpg" alt="Logo" width="64px" height="32px"/>
@@ -62,6 +70,19 @@
 
         </div>
     </section>
+    <!-- SCRIPTS (All one of them) -->
+    <script>
+        function handleMobNav() {
+            let mobNavEL = document.getElementById("mobNav");
+            console.log(mobNavEL.class);
+            if(mobNavEL.className === "hidden") {
+                mobNavEL.className = "block";
+            }
+            else {
+                mobNavEL.className = "hidden";
+            }
+        }
+    </script>
 
 </body>
 </html>
