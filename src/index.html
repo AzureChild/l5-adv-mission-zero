@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission D0</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<!-- Because of the quick one-off nature of this site I am only using arbitrary values, where it seems Tailwind is at its best making use
+    of your theme -->
+<body class="w-screen">
+    <nav class="bg-[black]">
+        <!-- Doing the navs this way creates extra work/duplicate code. Need better responsive solution. -->
+        <!-- MOBILE NAVIGATION BAR -->
+        <div class="flex md:hidden justify-between items-center">
+            <img src="../src/dndlogo.jpg" alt="Logo" width="64px" height="32px"/>
+            <button class="mx-6 px-1 border border-white text-[#FFFFFF]">MENU</button>
+            <!-- MOBILE LINKS -->
+        </div> 
+        <!-- DESKTOP NAVIGATION -->
+        <div class="hidden md:flex md:justify-between items-center">
+            <img src="../src/dndlogo.jpg" alt="Logo" width="64px" height="32px"/>
+            <!-- MENU LINKS -->
+            <ul class="flex flex-row text-[#FFFFFF] items-center">
+                <li class="px-4">Link 1</li>
+                <li class="px-4">Link 2</li>
+                <li class="px-4">Link 3</li>
+                <li class="px-4"><button class="rounded p-1 border border-white">Log In</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO AND SEARCH -->
+    <main class="max-w-screen text-center md:text-start bg-cover bg-center bg-no-repeat flex flex-col w-screen min-h-[350px] justify-between" style="background-image: url('../src/hero.jpg');"> 
+        <h1 class="p-12 mx-auto md:mx-0 md:w-1/2 font-bold text-3xl md:text-4xl md:max-w-[40%]">Found Familiar: Dungeons and Dragons</h1>
+        <!-- SEARCH ELEMENTS -->
+        <div class="my-2 flex flex-col items-center md:flex-row md:justify-center"> 
+            <input class="text-lg max-w-[50%] text-center" type="text" placeholder="Begin your journey!">
+            <button class="text-lg px-6 text-[#FFFFFF] rounded bg-gray-700">Search</button>
+        </div>
+    </main>
+
+    <!-- IMAGES -->
+    <section class="bg-[#E5E5E5]">
+        <div class="flex items-center flex-col md:flex-row md:justify-evenly">
+            <!-- I would have preferred to have used a React component here but for a simple site I want to keep light
+                we'll just repeat divs -->
+            <div class="block bg-[#4C4848] rounded my-8">
+                <img class="rounded" src="../src/character.jpg" alt="Character Creation" width="240px" height="480px"/>
+                <p class="text-center text-xl text-[#FFFFFF]">Character Creation</p>
+            </div>
+
+            <div class="block bg-[#4C4848] rounded my-8">
+                <img class="rounded" src="../src/wiz.jpg" alt="SRD" width="240px" height="480px"/>
+                <p class="text-center text-xl text-[#FFFFFF]">Handbook</p>
+            </div>
+
+            <div class="block bg-[#4C4848] rounded my-8">
+                <img class="rounded" src="../src/monster.jpg" alt="Bestiary" width="240px" height="480px"/>
+                <p class="text-center text-xl text-[#FFFFFF]">Bestiary</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
